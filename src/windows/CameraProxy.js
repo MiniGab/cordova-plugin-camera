@@ -301,7 +301,7 @@ function takePictureFromFileWindows(successCallback, errorCallback, args) {
 
 function takePictureFromCamera(successCallback, errorCallback, args) {
     // Check if necessary API available
-    if (!Windows.Media.Capture.CameraCaptureUI) {
+    if (navigator.appVersion.indexOf('Windows Phone 8.1') >= 0) {
         takePictureFromCameraWP(successCallback, errorCallback, args);
     } else {
         takePictureFromCameraWindows(successCallback, errorCallback, args);
